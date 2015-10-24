@@ -24,6 +24,7 @@ gem "simple_form"
 gem "title"
 gem "uglifier"
 gem 'clearance', '~> 1.11'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.5.1'
 
 group :development do
   gem "quiet_assets"
@@ -39,7 +40,6 @@ group :development, :test do
   gem "byebug"
   gem "dotenv-rails"
   gem "factory_girl_rails"
-  gem "i18n-tasks"
   gem "pry-rails"
   gem "rspec-rails", "~> 3.3.0"
 end
