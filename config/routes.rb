@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     root to: 'marketing#index'
   end
 
+  resources :wills
 
 end
