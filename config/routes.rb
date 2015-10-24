@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   constraints Clearance::Constraints::SignedOut.new do
     root to: 'marketing#index'
   end
+
+
 end
