@@ -4,14 +4,14 @@ ruby "2.2.3"
 
 gem "airbrake"
 gem "autoprefixer-rails"
-gem "bourbon", "~> 4.2.0"
+
 gem "coffee-rails", "~> 4.1.0"
 gem "delayed_job_active_record"
 gem "email_validator"
 gem "flutie"
 gem "high_voltage"
 gem "jquery-rails"
-gem "neat", "~> 1.7.0"
+
 gem "newrelic_rpm", ">= 3.9.8"
 gem "normalize-rails", "~> 3.0.0"
 gem "pg"
@@ -25,10 +25,11 @@ gem "title"
 gem "uglifier"
 gem 'clearance', '~> 1.11'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.5.1'
+gem 'bootswatch-rails'
 
 group :development do
   gem "quiet_assets"
-  gem "refills"
+
   gem "spring"
   gem "spring-commands-rspec"
   gem "web-console"

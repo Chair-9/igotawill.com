@@ -2,6 +2,10 @@
 
 @import "normalize-rails";
 @import "bootstrap-sprockets";
+@import "bootswatch/superhero/variables";
 @import "bootstrap";
-@import "nav";
-@import "layout";
+body { padding-top: 60px; }
+@import "bootswatch/superhero/bootswatch";
+
+// @import "nav";
+// @import "layout";
