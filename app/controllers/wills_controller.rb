@@ -35,12 +35,10 @@ class WillsController < ApplicationController
     redirect_to root_path, notice: "Deleted Will!"
   end
 
-
   private
 
   def will_params
-    params.require(:will).permit(:comments)
+    params.require(:will).permit(:comments, :title, :date, :executor,
+                                 :estate_plan, :burial_wishes)
   end
-
-
 end

@@ -1,5 +1,16 @@
-<h1>Update Will</h1>
-<%= simple_form_for @will do |f| %>
-  <%= f.input :comments %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container">
+  <div class="col-md-6">
+    <div class="well">
+      <h1>Update Will</h1>
+      <%= simple_form_for @will do |f| %>
+        <%= f.input :title %>
+        <%= f.input :date %>
+        <%= f.input :executor %>
+        <%= f.input :estate_plan %>
+        <%= f.input :comments %>
+
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
