@@ -5,7 +5,7 @@
         <dt>Title</dt>
         <dd><%= @will.title %></dd>
         <dt>Date</dt>
-        <dd><%= @will.date %></dd>
+        <dd><%= @will.date.strftime("%m/%d/%Y") %></dd>
         <dt>Executor</dt>
         <dd><%= @will.executor %></dd>
         <dt>Estate Plan</dt>

@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="container">
-  <nav class="navbar navbar-inverse">
+  <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
@@ -16,13 +16,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">igotawill.com</a>
+      <h4><%= link_to "igotawill.com", root_path %></h4>
+      <!-- <a class="navbar-brand", link_to root_path ><strong>igotawill.com</strong></a> -->
     </div>
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+    <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
       <ul class="nav navbar-nav">
         <!-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li> -->
-        <li><a href="#">Link</a></li>
+        <!-- <li><a href="#">Link</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -35,7 +36,7 @@
             <li><a href="#">One more separated link</a></li>
           </ul>
         </li>
-      </ul>
+      </ul> -->
       <!-- <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
@@ -45,7 +46,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
           <% if signed_in? -%>
-            <%= button_to t(".sign_out"), sign_out_path, method: :delete, class: "btn btn-default" %>
+            <%= button_to t(".sign_out"), sign_out_path, method: :delete, class: "btn btn-primary" %>
           <% else -%>
             <%= button_to "Sign in", sign_in_path, class: "btn btn-default" %>
             <%= button_to "Sign Up", sign_up_path, class: "btn btn-default" %>
@@ -57,13 +58,28 @@
 </nav>
 
 <% if flash[:notice] %>
-  <div class="alert alert-dismissible alert-success text-center" role="alert"><%= flash[:notice] %></div>
+  <div class="alert alert-dismissible alert-success text-center" role="alert">
+    <%= flash[:notice] %><button type="button" class="close" data-dismiss="alert">×</button>
+  </div>
 <% end %>
 
      <br />
 </div>
 
   <%= yield %>
-
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <div class="container">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="navbar-brand" href="#">Copywrite: Chair 9 LLC</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 </body>
 </html>
