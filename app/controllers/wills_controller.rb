@@ -7,7 +7,7 @@ class WillsController < ApplicationController
   def create
     @will = Will.new(will_params)
     if @will.save
-      redirect_to will_path(@will), notice: 'Will created successfully!'
+      redirect_to will_path(@will), notice: 'You have successfully created your Will, but still need to Sign it!'
     else
       render :new
     end
@@ -24,7 +24,7 @@ class WillsController < ApplicationController
   def update
     @will = Will.find(params[:id])
     if @will.update(will_params)
-      redirect_to will_path(@will), notice: 'Will updated successfully!'
+      redirect_to will_path(@will), notice: 'You have successfully updated your Will, but still need to Sign it!'
     else
       render :edit
     end

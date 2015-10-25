@@ -47,8 +47,8 @@
           <% if signed_in? -%>
             <%= button_to t(".sign_out"), sign_out_path, method: :delete, class: "btn btn-default" %>
           <% else -%>
-            <%= button_to "Sign in", sign_in_path %>
-            <%= button_to "Sign Up", sign_up_path %>
+            <%= button_to "Sign in", sign_in_path, class: "btn btn-default" %>
+            <%= button_to "Sign Up", sign_up_path, class: "btn btn-default" %>
           <% end -%>
         </li>
       </ul>
@@ -57,7 +57,7 @@
 </nav>
 
 <% if flash[:notice] %>
-  <div class="alert alert-dismissible alert-success" role="alert"><%= flash[:notice] %></div>
+  <div class="alert alert-dismissible alert-success text-center" role="alert"><%= flash[:notice] %></div>
 <% end %>
 
      <br />

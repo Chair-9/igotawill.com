@@ -1,5 +1,18 @@
 
 Rails.application.routes.draw do
+  resources :passwords, controller: "clearance/passwords", only: [:create, :new]
+resource :session, controller: "clearance/sessions", only: [:create]
+
+resources :users, controller: "clearance/users", only: [:create] do
+  resource :password,
+    controller: "clearance/passwords",
+    only: [:create, :edit, :update]
+end
+
+post "/sign_in" => "clearance/sessions#new", as: "sign_in"
+delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
+post "/sign_up" => "clearance/users#new", as: "sign_up"
+
   constraints Clearance::Constraints::SignedIn.new { |user| user.admin? } do
     root to: 'admin/dashboards#show', as: :admin_root
   end
@@ -13,5 +26,7 @@ Rails.application.routes.draw do
   end
 
   resources :wills
+
+
 
 end

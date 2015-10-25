@@ -6,8 +6,8 @@
         <%= f.input :title %>
         <%= f.input :date %>
         <%= f.input :executor %>
-        <%= f.input :estate_plan %>
-        <%= f.input :comments %>
+        <%= f.input :estate_plan, as: :text %>
+        <%= f.input :comments, as: :text %>
 
         <%= f.button :submit, class: 'btn btn-primary' %>
       <% end %>
