@@ -19,7 +19,7 @@
         <dd><%= @contact.postal_code %></dd>
       </dl>
       <br />
-      <%= link_to "Edit Contact", edit_contact_path %>
-        <p><a class="btn btn-primary btn-lg">Learn more</a></p>
+      <%= link_to "Edit Contact", edit_contact_path, class: "btn btn-primary" %>
+      <%= link_to  "Delete", contact_path(@contact), method: :delete, class: "btn btn-danger",data: { confirm: "Are you sure?" }  %>
   </div>
 </div>

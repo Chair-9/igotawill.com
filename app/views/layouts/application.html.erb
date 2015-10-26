@@ -45,9 +45,9 @@
       </form> -->
       <div class="nav navbar-nav navbar-right">
         <% if signed_in? -%>
-          <%= button_to t(".sign_out"), sign_out_path, method: :delete, class: "btn btn-primary" %>
+          <%= link_to t(".sign_out"), sign_out_path, method: :delete, class: "btn btn-primary" %>
         <% else -%>
-          <%= button_to "Sign in", sign_in_path, class: "btn btn-primary" %>
+          <%= link_to "Sign in", sign_in_path, class: "btn btn-primary" %>
         <% end -%>
       </div>
     </div>

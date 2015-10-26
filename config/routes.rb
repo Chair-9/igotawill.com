@@ -8,9 +8,9 @@ resources :users, controller: "clearance/users", only: [:create] do
     only: [:create, :edit, :update]
 end
 
-post "/sign_in" => "clearance/sessions#new", as: "sign_in"
+get "/sign_in" => "clearance/sessions#new", as: "sign_in"
 delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
-post "/sign_up" => "clearance/users#new", as: "sign_up"
+get "/sign_up" => "clearance/users#new", as: "sign_up"
 
   constraints Clearance::Constraints::SignedIn.new { |user| user.admin? } do
     root to: 'admin/dashboards#show', as: :admin_root

@@ -3,20 +3,20 @@
     <%= form.label :email %>
     <%= form.text_field :email, type: 'email' %>
   </div>
-
+  <br />
   <div class="password-field">
     <%= form.label :password %>
     <%= form.password_field :password %>
   </div>
-
+ <br />
   <div class="submit-field">
-    <%= form.submit %>
+    <%= form.submit "Sign In", class: 'btn btn-primary' %>
   </div>
-
+  <br />
   <div class="other-links">
     <% if Clearance.configuration.allow_sign_up? %>
-      <%= link_to t(".sign_up"), sign_up_path %>
+      <%= link_to t(".sign_up"), sign_up_path, class: "btn btn-info" %>
     <% end %>
-    <%= link_to t(".forgot_password"), new_password_path %>
+    <%= link_to t(".forgot_password"), new_password_path, class: "btn btn-success"  %>
   </div>
 <% end %>

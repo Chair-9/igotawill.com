@@ -13,7 +13,7 @@
         <dd><%= @next_of_kin.email %></dd>
       </dl>
       <br />
-      <%= link_to "Edit Next of Kin", edit_next_of_kin_path %>
-        <p><a class="btn btn-primary btn-lg">Learn more</a></p>
+      <%= link_to "Edit Next of Kin", edit_next_of_kin_path, class: "btn btn-primary" %>
+      <%= link_to  "Delete", next_of_kin_path(@next_of_kin), method: :delete, class: "btn btn-danger",data: { confirm: "Are you sure?" }  %>
   </div>
 </div>
