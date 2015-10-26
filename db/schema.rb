@@ -11,22 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151025230428) do
+ActiveRecord::Schema.define(version: 20151026033944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "contacts", force: :cascade do |t|
-    t.string "address_line_1"
-    t.string "address_line_2"
-    t.string "city"
-    t.string "state"
-    t.string "postal_code"
-    t.string "country"
-    t.string "phone"
-    t.string "first_name"
-    t.string "last_name"
+    t.string  "address_line_1"
+    t.string  "address_line_2"
+    t.string  "city"
+    t.string  "state"
+    t.string  "postal_code"
+    t.string  "country"
+    t.string  "phone"
+    t.string  "first_name"
+    t.string  "last_name"
+    t.integer "user_id"
   end
+
+  add_index "contacts", ["user_id"], name: "index_contacts_on_user_id", using: :btree
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
@@ -45,11 +48,14 @@ ActiveRecord::Schema.define(version: 20151025230428) do
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
   create_table "next_of_kins", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "phone"
-    t.string "email"
+    t.string  "first_name"
+    t.string  "last_name"
+    t.string  "phone"
+    t.string  "email"
+    t.integer "user_id"
   end
+
+  add_index "next_of_kins", ["user_id"], name: "index_next_of_kins_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",                                     null: false
@@ -73,6 +79,12 @@ ActiveRecord::Schema.define(version: 20151025230428) do
     t.string   "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
+  add_index "wills", ["user_id"], name: "index_wills_on_user_id", using: :btree
+
+  add_foreign_key "contacts", "users"
+  add_foreign_key "next_of_kins", "users"
+  add_foreign_key "wills", "users"
 end

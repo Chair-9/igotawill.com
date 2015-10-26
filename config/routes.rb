@@ -24,11 +24,10 @@ post "/sign_up" => "clearance/users#new", as: "sign_up"
     root to: 'marketing#index'
   end
 
-  resources :wills
-
   resources :users
-
+  resources :wills
   resources :contacts
+  resources :next_of_kins
 
 
 end

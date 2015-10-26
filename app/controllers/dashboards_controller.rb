@@ -1,7 +1,8 @@
 class DashboardsController < ApplicationController
+  before_action :require_login
 
   def show
-    @contacts = Contact.all
+    @contacts = current_user.contacts
   end
 
 

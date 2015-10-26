@@ -1,4 +1,5 @@
 class WillsController < ApplicationController
+  before_action :require_login
 
   def new
     @will = Will.new
@@ -6,6 +7,7 @@ class WillsController < ApplicationController
 
   def create
     @will = Will.new(will_params)
+    @will.user_id = current_user.id if current_user
     if @will.save
       redirect_to will_path(@will), notice: 'You have successfully created your Will, but still need to Sign it!'
     else

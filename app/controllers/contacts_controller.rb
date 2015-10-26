@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+  before_action :require_login
 
   def new
     @contact = Contact.new
@@ -6,6 +7,7 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
+    @contact.user_id = current_user.id if current_user
     if @contact.save
       redirect_to contact_path(@contact), notice: 'You have successfully created your Contact Info!'
     else
