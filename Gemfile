@@ -11,7 +11,7 @@ gem "email_validator"
 gem "flutie"
 gem "high_voltage"
 gem "jquery-rails"
-
+gem 'rails_12factor', '~> 0.0.3'
 gem "newrelic_rpm", ">= 3.9.8"
 gem "normalize-rails", "~> 3.0.0"
 gem "pg"

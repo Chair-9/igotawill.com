@@ -1,4 +1,9 @@
 <div class="container">
+  <ul class="breadcrumb">
+  <li> <%= link_to "Dashboard", root_path%></li>
+    <li class="active"><%= @contact.full_name %></li>
+  </ul>
+  <br />
   <div class="jumbotron">
     <h1>Contact Info for <%= @contact.full_name %></h1>
       <dl class="dl-horizontal">

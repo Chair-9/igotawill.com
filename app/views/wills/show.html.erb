@@ -1,4 +1,9 @@
 <div class="container">
+  <ul class="breadcrumb">
+  <li><%= link_to "Dashboard", root_path%></li>
+    <li class="active"><%= @will.title %></li>
+  </ul>
+  <br />
   <div class="jumbotron">
     <h1>My Will</h1>
       <dl class="dl-horizontal">
