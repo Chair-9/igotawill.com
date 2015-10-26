@@ -16,9 +16,27 @@
     <div class="col-md-12">
       <div class="well">
         <div class="pull-right">
+          <%= link_to "Create New Next of Kin", new_next_of_kin_path, class: "btn btn-primary" %>
+        </div>
+        <h1>Next of Kin</h1>
+        <% @next_of_kins.each do |next_of_kin| %>
+          <ul>
+            <li><%= link_to next_of_kin.full_name, next_of_kin_path(next_of_kin) %></li>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="well">
+        <div class="pull-right">
           <%= link_to "Create New Will", new_will_path, class: "btn btn-primary" %>
         </div>
-        <h1>Tristan Rubadeau</h1>
+        <h1>Wills</h1>
+        <% @wills.each do |will| %>
+          <ul>
+            <li><%= link_to will.title, will_path(will) %></li>
+          </ul>
+        <% end %>
       </div>
     </div>
   </div>

@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1>Contact Info for <%= @next_of_kin.full_name %></h1>
+      <dl class="dl-horizontal">
+        <dt>Phone</dt>
+        <dd><%= @next_of_kin.phone %></dd>
+        <dt>Email</dt>
+        <dd><%= @next_of_kin.email %></dd>
+      </dl>
+      <br />
+      <%= link_to "Edit Next of Kin", edit_next_of_kin_path %>
+        <p><a class="btn btn-primary btn-lg">Learn more</a></p>
+  </div>
+</div>
