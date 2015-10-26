@@ -6,6 +6,11 @@
           <%= link_to "Update Contact Info", new_contact_path, class: "btn btn-primary" %>
         </div>
         <h1>Contact Info</h1>
+        <% @contacts.each do |contact| %>
+          <ul>
+            <li><%= link_to contact.full_name, contact_path(contact) %></li>
+          </ul>
+        <% end %>
       </div>
     </div>
     <div class="col-md-12">

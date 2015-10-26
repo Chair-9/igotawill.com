@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1>Contact Info for <%= @contact.full_name %></h1>
+      <dl class="dl-horizontal">
+        <dt>Address</dt>
+        <dd><%= @contact.address_line_1 %></dd>
+        <dt>Address Line 2</dt>
+        <dd><%= @contact.address_line_2 %></dd>
+        <dt>City</dt>
+        <dd><%= @contact.city %></dd>
+        <dt>State</dt>
+        <dd><%= @contact.state %></dd>
+        <dt>Zip Code</dt>
+        <dd><%= @contact.postal_code %></dd>
+      </dl>
+      <br />
+      <%= link_to "Edit Contact", edit_contact_path %>
+        <p><a class="btn btn-primary btn-lg">Learn more</a></p>
+  </div>
+</div>

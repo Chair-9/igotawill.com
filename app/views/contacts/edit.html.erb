@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="col-md-8 col-sm-offset-2">
+    <div class="well">
+      <h1>Contact Info</h1>
+      <%= simple_form_for @contact do |f| %>
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+        <%= f.input :address_line_1 %>
+        <%= f.input :address_line_2 %>
+        <%= f.input :city %>
+        <%= f.input :state %>
+        <%= f.input :postal_code %>
+
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
