@@ -9,7 +9,7 @@ class NextOfKinsController < ApplicationController
     @next_of_kin = NextOfKin.new(next_of_kin_params)
     @next_of_kin.user_id = current_user.id if current_user
     if @next_of_kin.save
-      redirect_to next_of_kin_path(@next_of_kin), notice: 'You have successfully created your Next of Kin!'
+      redirect_to root_path, notice: 'You have successfully created your Next of Kin!'
     else
       render :new
     end

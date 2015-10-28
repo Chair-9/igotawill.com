@@ -9,7 +9,7 @@ class WillsController < ApplicationController
     @will = Will.new(will_params)
     @will.user_id = current_user.id if current_user
     if @will.save
-      redirect_to will_path(@will), notice: 'You have successfully created your Will, but still need to Sign it!'
+      redirect_to root_path, notice: 'You have successfully created your Will, but still need to Sign it!'
     else
       render :new
     end

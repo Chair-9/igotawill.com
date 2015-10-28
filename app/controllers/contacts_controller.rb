@@ -9,7 +9,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     @contact.user_id = current_user.id if current_user
     if @contact.save
-      redirect_to contact_path(@contact), notice: 'You have successfully created your Contact Info!'
+      redirect_to root_path, notice: 'You have successfully created your Contact Info!'
     else
       render :new
     end
